@@ -5,9 +5,16 @@
  "General settings
  set backspace=2                        "enable backspace key
  set tabstop=4 shiftwidth=4 expandtab   "insert 4 spaces for a tab, display tab characters as 4 spaces
+ :let mapleader = ","
+ nnoremap <C-Left> <C-w><Left>
+ nnoremap <C-Right> <C-w><Right>
+ nnoremap <C-Up> <C-w><Up>
+ nnoremap <C-Down> <C-w><Down>
  
+ "Add git directory to $PATH for NeoBundle to work
+ let $PATH .= ";C:\\Program Files (x86)\\Git\\bin"
 
-let $PATH .= ";C:\\Program Files (x86)\\Git\\bin"
+
  
  
  if has('vim_starting')
@@ -25,13 +32,22 @@ let $PATH .= ";C:\\Program Files (x86)\\Git\\bin"
  NeoBundleFetch 'Shougo/neobundle.vim'
 
  " My Bundles here:
- autocmd FileType html setlocal shiftwidth=2 tabstop=2 "set indention to 2 spaces for HTML files
  NeoBundle 'scrooloose/nerdtree'
+ nnoremap <leader>nt :NERDTree<Enter>
+ NeoBundle 'Yggdroot/indentLine'
+ 
+ " HTML
+ autocmd FileType html setlocal shiftwidth=2 tabstop=2 "set indention to 2 spaces for HTML files
  NeoBundle 'mattn/emmet-vim'
  NeoBundle 'vim-scripts/matchit.zip'
+ NeoBundle 'othree/html5-syntax.vim'
+
+ " CSS
  NeoBundle 'hail2u/vim-css3-syntax'
  NeoBundle 'ap/vim-css-color'
- NeoBundle 'othree/html5-syntax.vim'
+ NeoBundle 'KabbAmine/vCoolor.vim'
+
+ "javascript
  NeoBundle 'jelera/vim-javascript-syntax'
  NeoBundle 'othree/javascript-libraries-syntax.vim'
  let g:used_javascript_libs = 'jquery,underscore,backbone,angularjs'

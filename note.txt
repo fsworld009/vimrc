@@ -9,15 +9,20 @@ tags : tagbar or taglist
 https://github.com/marijnh/tern
 https://github.com/ramitos/jsctags
 
-
-auto-completion
-YouCompleteMe 
-
 indent?
 indentLine -> display vertical lines
 
 indent by filetype
 http://stackoverflow.com/questions/158968/changing-vim-indentation-behavior-by-file-type
+
+
+
+
+auto-completion
+C/C++/Objective-C/Objective-C++ 
+YouCompleteMe 
+
+
 
 Syntastic.vim
 grammar check
@@ -45,3 +50,18 @@ python, ruby
 vim-indent-object
 
 如果你寫的程式語言是用大括號把程式碼包起來的，你只要按vi{就可以把大括號裡的東西全部選起來。但如果遇到像ruby或python這種不需要大括號的，就可以用得上它。
+
+
+
+
+http://vim.wikia.com/wiki/Capture_ex_command_output
+
+
+
+
+vim session
+http://bocoup.com/weblog/sessions-the-vim-feature-you-probably-arent-using/
+https://github.com/xolox/vim-session
+
+:buffer [N] change buffer
+:bdelete
