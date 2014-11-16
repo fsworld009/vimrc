@@ -5,16 +5,24 @@
  "General settings
  set backspace=2                        "enable backspace key
  set tabstop=4 shiftwidth=4 expandtab   "insert 4 spaces for a tab, display tab characters as 4 spaces
- :let mapleader = ","
+ :let mapleader = ","                   "change leader key to ','
+ 
+ "abbreviated motion keys for split moving
  nnoremap <C-Left> <C-w><Left>
  nnoremap <C-Right> <C-w><Right>
  nnoremap <C-Up> <C-w><Up>
  nnoremap <C-Down> <C-w><Down>
  
- "Add git directory to $PATH for NeoBundle to work
+ " editor styling, colorscheme specified after the scheme file is loaded
+ syntax on
+ set guifont=Dejavu\ Sans\ Mono:h10.5
+ set number
+ 
+ "Add git directory to $PATH for NeoBundle to work properly
  let $PATH .= ";C:\\Program Files (x86)\\Git\\bin"
 
-
+ "redirect ex-command output to register x
+ redir @x
  
  
  if has('vim_starting')
@@ -35,6 +43,17 @@
  NeoBundle 'scrooloose/nerdtree'
  nnoremap <leader>nt :NERDTree<Enter>
  NeoBundle 'Yggdroot/indentLine'
+ NeoBundle 'vim-scripts/obsidian2.vim'
+ NeoBundle 'Lokaltog/vim-easymotion'
+ 
+ "EasyMotion key bindings
+ nmap <Plug>(easymotion-prefix)s <Plug>(easymotion-s2)
+ nmap <Plug>(easymotion-prefix)<Down> <Plug>(easymotion-j)
+ nmap <Plug>(easymotion-prefix)<Up> <Plug>(easymotion-k)
+ nmap <Plug>(easymotion-prefix)/   <Plug>(easymotion-sn)
+ nmap <Plug>(easymotion-prefix).   <Plug>(easymotion-repeat)
+
+
  
  " HTML
  autocmd FileType html setlocal shiftwidth=2 tabstop=2 "set indention to 2 spaces for HTML files
@@ -60,6 +79,7 @@
 
  " Required:
  filetype plugin indent on
+ colorscheme obsidian2
 
  " If there are uninstalled bundles found on startup,
  " this will conveniently prompt you to install them.
