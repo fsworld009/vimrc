@@ -20,6 +20,10 @@ easymotion
 http://powenyang.blogspot.com/2011/06/vim.html
 
 
+comment
+https://github.com/scrooloose/nerdcommenter
+
+
 powerline -> need python
 
 auto-completion
@@ -56,8 +60,8 @@ https://github.com/ramitos/jsctags
 
 http://vim.wikia.com/wiki/Converting_tabs_to_spaces
 
-
-
+https://github.com/joestelmach/lint.vim
+https://github.com/marijnh/tern_for_vim
 
 
 python, ruby

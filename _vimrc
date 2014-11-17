@@ -9,7 +9,7 @@
  " General settings
  set backspace=2                        "enable backspace key
  set tabstop=4 shiftwidth=4 expandtab   "insert 4 spaces for a tab, display tab characters as 4 spaces
- :let mapleader = ","                   "change leader key to ','
+ let mapleader = ","                   "change leader key to ','
  
  " abbreviated motion keys for split moving
  nnoremap <C-Left> <C-w><Left>
@@ -33,7 +33,7 @@
  setglobal nobomb
  
  " Add git directory to $PATH for NeoBundle to work properly
- let $PATH = $PATH . ";" . s:git_path
+ let $PATH .= ";" . s:git_path
 
  "redirect ex-command output to register x
  redir @x
@@ -56,6 +56,7 @@
  " My Bundles here:
  NeoBundle 'scrooloose/nerdtree'
  nnoremap <leader>nt :NERDTree<Enter>
+ NeoBundle 'scrooloose/nerdcommenter'
  NeoBundle 'Yggdroot/indentLine'
  NeoBundle 'vim-scripts/obsidian2.vim'
  NeoBundle 'tpope/vim-surround'
