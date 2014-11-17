@@ -7,7 +7,7 @@ line number
 tags : tagbar or taglist
 
 https://github.com/marijnh/tern
-https://github.com/ramitos/jsctags
+
 
 indent?
 indentLine -> display vertical lines
@@ -31,6 +31,8 @@ YouCompleteMe
 https://github.com/tpope/vim-repeat
 repeat every command (include plugin)
 
+https://github.com/myusuf3/numbers.vim
+
 
 Syntastic.vim
 grammar check
@@ -47,7 +49,11 @@ html5.vim
 visualHtml  http://www.vim.org/scripts/script.php?script_id=4908
 
 vCoolor - A color selector/picker plugin for Vim 
-https://github.com/Rykka/colorv.vim
+
+
+javasript
+https://github.com/ramitos/jsctags
+
 http://vim.wikia.com/wiki/Converting_tabs_to_spaces
 
 

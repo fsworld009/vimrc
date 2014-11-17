@@ -15,9 +15,8 @@
  
  " editor styling, colorscheme specified after the scheme file is loaded
  syntax on
- set guifont=Dejavu\ Sans\ Mono:h10.5
- set number
- 
+ set guifont=Dejavu\ Sans\ Mono:h10
+ set number 
  "Add git directory to $PATH for NeoBundle to work properly
  let $PATH .= ";C:\\Program Files (x86)\\Git\\bin"
 
@@ -44,8 +43,19 @@
  nnoremap <leader>nt :NERDTree<Enter>
  NeoBundle 'Yggdroot/indentLine'
  NeoBundle 'vim-scripts/obsidian2.vim'
- NeoBundle 'Lokaltog/vim-easymotion'
+ NeoBundle 'tpope/vim-surround'
  
+ "Surround plugin remap (all commands begin with <leader>s, it just makes more sense to me)
+ "cs ysiw ds yss (V)S
+ nmap <leader>sc cs
+ nmap <leader>sd ds
+ nmap <leader>sw ysiw
+ nmap <leader>sl yss
+ vmap <leader>s S
+ 
+ NeoBundle 'tpope/vim-repeat'
+
+ NeoBundle 'Lokaltog/vim-easymotion'
  "EasyMotion key bindings
  nmap <Plug>(easymotion-prefix)s <Plug>(easymotion-s2)
  nmap <Plug>(easymotion-prefix)<Down> <Plug>(easymotion-j)
@@ -53,6 +63,10 @@
  nmap <Plug>(easymotion-prefix)/   <Plug>(easymotion-sn)
  nmap <Plug>(easymotion-prefix).   <Plug>(easymotion-repeat)
 
+ "NeoBundle 'b3niup/numbers.vim' "Need fork and improvement
+ "Numbers key bindings
+ nnoremap <F3> :NumbersToggle<CR>
+ nnoremap <F4> :NumbersOnOff<CR>
 
  
  " HTML
