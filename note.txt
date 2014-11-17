@@ -87,3 +87,8 @@ https://github.com/xolox/vim-session
 
 
 http://vim.wikia.com/wiki/Search_and_replace
+
+
+¯Ê
+find & replace plugin
+lint/tag for javascript/jquery/...etc
