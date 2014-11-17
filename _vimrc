@@ -2,16 +2,24 @@
 " Note: Skip initialization for vim-tiny or vim-small.
  if !1 | finish | endif
  
- "General settings
+ " runtime paths
+ let s:git_path = "C:\\Program Files (x86)\\Git\\bin"
+ let s:plugin_path = "~/vim/bundle/"
+ 
+ " General settings
  set backspace=2                        "enable backspace key
  set tabstop=4 shiftwidth=4 expandtab   "insert 4 spaces for a tab, display tab characters as 4 spaces
  :let mapleader = ","                   "change leader key to ','
  
- "abbreviated motion keys for split moving
+ " abbreviated motion keys for split moving
  nnoremap <C-Left> <C-w><Left>
  nnoremap <C-Right> <C-w><Right>
  nnoremap <C-Up> <C-w><Up>
  nnoremap <C-Down> <C-w><Down>
+ 
+ " abbreviated motion keys for tab moving
+ nnoremap <C-Tab> gt
+ nnoremap <C-S-Tab> gT
  
  " editor styling, colorscheme specified after the scheme file is loaded
  syntax on
@@ -19,8 +27,13 @@
  set number
  set hlsearch
  
- "Add git directory to $PATH for NeoBundle to work properly
- let $PATH .= ";C:\\Program Files (x86)\\Git\\bin"
+ " UTF-8
+ set encoding=utf-8
+ setglobal fileencoding=utf-8
+ setglobal nobomb
+ 
+ " Add git directory to $PATH for NeoBundle to work properly
+ let $PATH = $PATH . ";" . s:git_path
 
  "redirect ex-command output to register x
  redir @x
@@ -30,11 +43,11 @@
    set nocompatible               " Be iMproved
 
    " Required:
-   set runtimepath+=~/vim/bundle/neobundle.vim/
+   execute "set runtimepath+=" .  s:plugin_path . "neobundle.vim/"
  endif
 
  " Required:
- call neobundle#begin(expand('~/vim/bundle/'))
+ call neobundle#begin(expand(s:plugin_path))
 
  " Let NeoBundle manage NeoBundle
  " Required:
@@ -47,12 +60,20 @@
  NeoBundle 'vim-scripts/obsidian2.vim'
  NeoBundle 'tpope/vim-surround'
  
- "Surround plugin remap (all commands begin with <leader>s, it just makes more sense to me)
+ "vim-misc is required for vim-session
+ NeoBundle 'xolox/vim-misc'
+ NeoBundle 'xolox/vim-session'
+ let g:session_autosave = 'yes'
+ let g:session_autoload = 'yes'
+ let g:session_autosave_periodic = 10
+ 
+ "Surround plugin command remaps (all commands begin with <leader>s, it just makes more sense to me)
  "cs ysiw ds yss (V)S
  nmap <leader>sc cs
  nmap <leader>sd ds
  nmap <leader>sw ysiw
- nmap <leader>sl yss
+ nmap <leader>sW ysiW
+ nmap <leader>ss yss
  vmap <leader>s S
  
  NeoBundle 'tpope/vim-repeat'
