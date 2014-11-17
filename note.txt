@@ -79,3 +79,7 @@ https://github.com/xolox/vim-session
 
 :buffer [N] change buffer
 :bdelete
+
+
+
+http://vim.wikia.com/wiki/Search_and_replace

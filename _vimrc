@@ -16,7 +16,9 @@
  " editor styling, colorscheme specified after the scheme file is loaded
  syntax on
  set guifont=Dejavu\ Sans\ Mono:h10
- set number 
+ set number
+ set hlsearch
+ 
  "Add git directory to $PATH for NeoBundle to work properly
  let $PATH .= ";C:\\Program Files (x86)\\Git\\bin"
 
