@@ -4,8 +4,8 @@ https://github.com/Xuyuanp/nerdtree-git-plugin
 
 line number
 
-tags : tagbar or taglist
-
+tags : tagbar(better for oop) or taglist
+https://github.com/xolox/vim-easytags
 https://github.com/marijnh/tern
 
 
@@ -29,7 +29,9 @@ powerline -> need python
 auto-completion
 C/C++/Objective-C/Objective-C++ 
 YouCompleteMe 
+https://github.com/Shougo/neocomplcache.vim
 
+Omni complete can be refined by ctags/tern (Tagbar triggers ctags/tern to generate tags)
 
 
 https://github.com/tpope/vim-repeat
@@ -40,6 +42,13 @@ https://github.com/myusuf3/numbers.vim
 
 Syntastic.vim
 grammar check
+
+
+
+Snippet
+https://github.com/Shougo/neosnippet.vim
+https://github.com/spf13/snipmate-snippets
+https://github.com/honza/vim-snippets
 
 HTML
 matchit.zip : extended % matching for HTML
@@ -56,12 +65,12 @@ vCoolor - A color selector/picker plugin for Vim
 
 
 javasript
-https://github.com/ramitos/jsctags
-
 http://vim.wikia.com/wiki/Converting_tabs_to_spaces
 
 https://github.com/joestelmach/lint.vim
 https://github.com/marijnh/tern_for_vim
+
+node.js-> run tern -> 
 
 https://github.com/michalliu/jsflakes.vim
 

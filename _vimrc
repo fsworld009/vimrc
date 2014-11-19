@@ -4,6 +4,7 @@
  
  " runtime paths
  let s:git_path = "C:\\Program Files (x86)\\Git\\bin"
+ let s:bin_path = $HOME . "\\vim\\bin"
  let s:plugin_path = "~/vim/bundle/"
  
  " General settings
@@ -34,6 +35,8 @@
  
  " Add git directory to $PATH for NeoBundle to work properly
  let $PATH .= ";" . s:git_path
+ " Add bin directory to $PATH for Tagbar, jsctags...etc
+ let $PATH .= ";" . s:bin_path
 
  "redirect ex-command output to register x
  redir @x
@@ -60,6 +63,7 @@
  NeoBundle 'Yggdroot/indentLine'
  NeoBundle 'vim-scripts/obsidian2.vim'
  NeoBundle 'tpope/vim-surround'
+
  
  "vim-misc is required for vim-session
  NeoBundle 'xolox/vim-misc'
@@ -80,6 +84,7 @@
  NeoBundle 'tpope/vim-repeat'
 
  NeoBundle 'Lokaltog/vim-easymotion'
+ let g:neocomplcache_enable_at_startup = 1
  "EasyMotion key bindings
  nmap <Plug>(easymotion-prefix)s <Plug>(easymotion-s2)
  nmap <Plug>(easymotion-prefix)<Down> <Plug>(easymotion-j)
@@ -92,22 +97,31 @@
  nnoremap <F3> :NumbersToggle<CR>
  nnoremap <F4> :NumbersOnOff<CR>
 
+ NeoBundle 'majutsushi/tagbar'
+ NeoBundle 'Shougo/neocomplcache.vim'
+ "let g:tagbar_ctags_bin = '~/vim/bin/ctags.exe' "this directory is already in $PATH, so this line is useless
  
- " HTML
+ " HTML, XML
  autocmd FileType html setlocal shiftwidth=2 tabstop=2 "set indention to 2 spaces for HTML files
  NeoBundle 'mattn/emmet-vim'
  NeoBundle 'vim-scripts/matchit.zip'
  NeoBundle 'othree/html5-syntax.vim'
+ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
  " CSS
  NeoBundle 'hail2u/vim-css3-syntax'
  NeoBundle 'ap/vim-css-color'
  NeoBundle 'KabbAmine/vCoolor.vim'
+ NeoBundle 'mtscout6/vim-tagbar-css'
+ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 
  "javascript
  NeoBundle 'jelera/vim-javascript-syntax'
  NeoBundle 'othree/javascript-libraries-syntax.vim'
  let g:used_javascript_libs = 'jquery,underscore,backbone,angularjs'
+ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+ NeoBundle 'marijnh/tern_for_vim'
  
  
  " Refer to |:NeoBundle-examples|.
