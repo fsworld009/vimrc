@@ -62,7 +62,7 @@
  nnoremap <leader>nt :NERDTree<Enter>
  NeoBundle 'scrooloose/nerdcommenter'
  NeoBundle 'Yggdroot/indentLine'
- NeoBundle 'vim-scripts/obsidian2.vim'
+ NeoBundle 'fsworld009/obsidian2.vim'
  NeoBundle 'tpope/vim-surround'
 
  
