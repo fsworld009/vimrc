@@ -43,6 +43,17 @@ https://github.com/myusuf3/numbers.vim
 Syntastic.vim
 grammar check
 
+HTML
+https://github.com/scrooloose/syntastic/wiki/HTML:---tidy
+
+
+CSS
+https://github.com/scrooloose/syntastic/wiki/CSS:---csslint
+git://github.com/CSSLint/csslint
+
+
+javascript
+need jshint -> npm install -g git://github.com/jshint/jshint
 
 
 Snippet
