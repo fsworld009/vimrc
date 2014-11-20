@@ -3,3 +3,4 @@
 gVimPortableSettings.ini
 /.cache/
 _viminfo
+*.swp

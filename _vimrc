@@ -11,7 +11,7 @@
  set backspace=2                        "enable backspace key
  set tabstop=4 shiftwidth=4 expandtab   "insert 4 spaces for a tab, display tab characters as 4 spaces
  let mapleader = ","                    "change leader key to ','
- set nowrap                               "no auto word wrapping
+ "set nowrap                               "no auto word wrapping
  
  " abbreviated motion keys for split moving
  nnoremap <C-Left> <C-w><Left>
@@ -93,7 +93,7 @@
  nmap <Plug>(easymotion-prefix)/   <Plug>(easymotion-sn)
  nmap <Plug>(easymotion-prefix).   <Plug>(easymotion-repeat)
 
- "NeoBundle 'b3niup/numbers.vim' "Need fork and improvement
+ NeoBundle 'b3niup/numbers.vim' 
  "Numbers key bindings
  nnoremap <F3> :NumbersToggle<CR>
  nnoremap <F4> :NumbersOnOff<CR>
