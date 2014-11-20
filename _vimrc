@@ -10,7 +10,8 @@
  " General settings
  set backspace=2                        "enable backspace key
  set tabstop=4 shiftwidth=4 expandtab   "insert 4 spaces for a tab, display tab characters as 4 spaces
- let mapleader = ","                   "change leader key to ','
+ let mapleader = ","                    "change leader key to ','
+ set nowrap                               "no auto word wrapping
  
  " abbreviated motion keys for split moving
  nnoremap <C-Left> <C-w><Left>
@@ -35,7 +36,7 @@
  
  " Add git directory to $PATH for NeoBundle to work properly
  let $PATH .= ";" . s:git_path
- " Add bin directory to $PATH for Tagbar, jsctags...etc
+ " Add bin directory to $PATH for Tagbar
  let $PATH .= ";" . s:bin_path
 
  "redirect ex-command output to register x
@@ -98,9 +99,16 @@
  nnoremap <F4> :NumbersOnOff<CR>
 
  NeoBundle 'majutsushi/tagbar'
+ nmap <leader>tb :TagbarOpen<CR>
+
  NeoBundle 'Shougo/neocomplcache.vim'
  "let g:tagbar_ctags_bin = '~/vim/bin/ctags.exe' "this directory is already in $PATH, so this line is useless
  
+ NeoBundle 'bling/vim-airline'
+ let g:airline#extensions#tabline#enabled = 1
+ 
+ source ~/projectview.vim 
+
  " HTML, XML
  autocmd FileType html setlocal shiftwidth=2 tabstop=2 "set indention to 2 spaces for HTML files
  NeoBundle 'mattn/emmet-vim'
