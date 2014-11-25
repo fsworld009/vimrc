@@ -7,6 +7,7 @@
  let s:bin_path = $HOME . "\\vim\\bin"
  let s:plugin_path = "~/vim/bundle/"
  
+ 
  " General settings
  set backspace=2                        "enable backspace key
  set tabstop=4 shiftwidth=4 expandtab   "insert 4 spaces for a tab, display tab characters as 4 spaces
@@ -23,6 +24,10 @@
  nnoremap <C-Tab> gt
  nnoremap <C-S-Tab> gT
  
+ " abbreviated motion keys for tab moving
+ nnoremap ]b :bn<CR>
+ nnoremap [b :bp<CR>
+ 
  " editor styling, colorscheme specified after the scheme file is loaded
  syntax on
  set guifont=Dejavu\ Sans\ Mono:h10
@@ -33,6 +38,15 @@
  set encoding=utf-8
  setglobal fileencoding=utf-8
  setglobal nobomb
+ 
+ "folding settings http://smartic.us/2009/04/06/code-folding-in-vim/
+ set foldmethod=indent   "fold based on indent
+ set foldnestmax=10      "deepest fold is 10 levels
+ set nofoldenable        "dont fold by default
+ set foldlevel=1         
+ 
+ "Find and Replace (substitute)
+ nnoremap <leader>fr :%s///gcI
  
  " Add git directory to $PATH for NeoBundle to work properly
  let $PATH .= ";" . s:git_path
@@ -59,9 +73,8 @@
 
  " My Bundles here:
  NeoBundle 'scrooloose/nerdtree'
- nnoremap <leader>nt :NERDTree<Enter>
- NeoBundle 'https://github.com/Xuyuanp/nerdtree-git-plugin'
- let g:NERDTreeUseSimpleIndicator = 1
+ NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+ nnoremap <leader>nt :NERDTreeToggle<CR>
 
  NeoBundle 'scrooloose/nerdcommenter'
  NeoBundle 'Yggdroot/indentLine'
@@ -71,10 +84,9 @@
  NeoBundle 'scrooloose/syntastic'
  "let g:syntastic_quiet_messages = { "type": "style","level": "warnings"} 
  let g:syntastic_check_on_open = 1
- 
- "Syntastics active mode not working, workaround
+ let g:syntastic_enable_highlighting=0
+ "active mode is broken when NERDTree is opened, workaround
  autocmd BufWritePost *.* SyntasticCheck
-
  
  "vim-misc is required for vim-session
  NeoBundle 'xolox/vim-misc'
@@ -109,7 +121,7 @@
  nnoremap <F4> :NumbersOnOff<CR>
 
  NeoBundle 'majutsushi/tagbar'
- nmap <leader>tb :TagbarOpen<CR>
+ nmap <leader>tb :TagbarToggle<CR>
 
  NeoBundle 'Shougo/neocomplcache.vim'
  "let g:tagbar_ctags_bin = '~/vim/bin/ctags.exe' "this directory is already in $PATH, so this line is useless
@@ -127,6 +139,7 @@
  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
  "let g:syntastic_html_checkers = ['tidy']
+ NeoBundle 'gregsexton/MatchTag'
 
  " CSS
  NeoBundle 'hail2u/vim-css3-syntax'
