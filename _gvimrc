@@ -1,3 +1,4 @@
  set lines=999 columns=999 "simulate maximize window on startup 
  au GUIEnter * simalt ~x "maximize window on startup, only works for Win32 gvim (English version OS only?)
  set guioptions-=T  "remove toolbar
+ set guifont=Dejavu\ Sans\ Mono:h10

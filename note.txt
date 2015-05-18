@@ -110,6 +110,9 @@ https://github.com/xolox/vim-session
 
 http://vim.wikia.com/wiki/Search_and_replace
 
+===force en_US
+http://stackoverflow.com/questions/126853/how-do-i-set-the-ui-language-in-vim
+
 
 ¯Ê
 find & replace plugin

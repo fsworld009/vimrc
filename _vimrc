@@ -3,10 +3,16 @@
  if !1 | finish | endif
  
  " runtime paths
- let s:git_path = "C:\\Program Files (x86)\\Git\\bin"
- let s:bin_path = $HOME . "\\vim\\bin"
+ let s:git_path = $ROOT . "\\msys64\\usr\\bin"  "$ROOT is from gvim.bat
+ let s:bin_path = $ROOT . "\\bin"
  let s:plugin_path = "~/vim/bundle/"
  
+ "force English
+set langmenu=en_US
+let $LANG = 'en_US'
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+
  
  " General settings
  set backspace=2                        "enable backspace key
@@ -30,7 +36,7 @@
  
  " editor styling, colorscheme specified after the scheme file is loaded
  syntax on
- set guifont=Dejavu\ Sans\ Mono:h10
+ 
  set number
  set hlsearch
  
@@ -139,7 +145,8 @@
  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
  "let g:syntastic_html_checkers = ['tidy']
- NeoBundle 'gregsexton/MatchTag'
+ "NeoBundle 'gregsexton/MatchTag'
+ "NeoBundle 'valloric/MatchTagAlways'
 
  " CSS
  NeoBundle 'hail2u/vim-css3-syntax'
