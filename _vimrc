@@ -1,10 +1,12 @@
 " NeoBundle
 " Note: Skip initialization for vim-tiny or vim-small.
  if !1 | finish | endif
+
+ " Use bash
+ set shell=sh.exe
+ set shellcmdflag="--login -i"
  
  " runtime paths
- let s:git_path = $ROOT . "\\msys64\\usr\\bin"  "$ROOT is from gvim.bat
- let s:bin_path = $ROOT . "\\bin"
  let s:plugin_path = "~/vim/bundle/"
  
  "force English
@@ -53,11 +55,6 @@ source $VIMRUNTIME/menu.vim
  
  "Find and Replace (substitute)
  nnoremap <leader>fr :%s///gcI
- 
- " Add git directory to $PATH for NeoBundle to work properly
- let $PATH .= ";" . s:git_path
- " Add bin directory to $PATH for Tagbar
- let $PATH .= ";" . s:bin_path
 
  "redirect ex-command output to register x
  redir @x
@@ -145,6 +142,7 @@ source $VIMRUNTIME/menu.vim
  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
  "let g:syntastic_html_checkers = ['tidy']
+ "let g:syntastic_html_tidy_exec = 'tidy5'
  "NeoBundle 'gregsexton/MatchTag'
  "NeoBundle 'valloric/MatchTagAlways'
 
