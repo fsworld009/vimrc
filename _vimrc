@@ -2,10 +2,7 @@
 " Note: Skip initialization for vim-tiny or vim-small.
  if !1 | finish | endif
 
- " Use bash
- set shell=sh.exe
- set shellcmdflag="--login -i"
- 
+
  " runtime paths
  let s:plugin_path = "~/vim/bundle/"
  
@@ -141,10 +138,10 @@ source $VIMRUNTIME/menu.vim
  NeoBundle 'othree/html5-syntax.vim'
  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
- "let g:syntastic_html_checkers = ['tidy']
- "let g:syntastic_html_tidy_exec = 'tidy5'
+ let g:syntastic_html_checkers = ['tidy']
+ let g:syntastic_html_tidy_exec = 'tidy5'
  "NeoBundle 'gregsexton/MatchTag'
- "NeoBundle 'valloric/MatchTagAlways'
+ NeoBundle 'valloric/MatchTagAlways'
 
  " CSS
  NeoBundle 'hail2u/vim-css3-syntax'
@@ -152,12 +149,13 @@ source $VIMRUNTIME/menu.vim
  NeoBundle 'KabbAmine/vCoolor.vim'
  NeoBundle 'mtscout6/vim-tagbar-css'
  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
- "let g:syntastic_css_checkers = ['csslint']
+ let g:syntastic_css_checkers = ['csslint']
 
  "javascript
  NeoBundle 'jelera/vim-javascript-syntax'
  NeoBundle 'othree/javascript-libraries-syntax.vim'
  let g:used_javascript_libs = 'jquery,underscore,backbone,angularjs'
+ let g:syntastic_js_checkers = ['jshint']
  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
  NeoBundle 'marijnh/tern_for_vim'
 
