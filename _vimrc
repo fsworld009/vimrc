@@ -32,6 +32,17 @@ source $VIMRUNTIME/menu.vim
  " abbreviated motion keys for tab moving
  nnoremap ]b :bn<CR>
  nnoremap [b :bp<CR>
+ nnoremap ]B :buffers<CR>
+ " abbreviated motion keys for quickfix moving
+ nnoremap ]c :cnext<CR>
+ nnoremap [c :cprevious<CR>
+ nnoremap ]C :copen<CR>
+
+ "close buffers/kill buffers
+ nnoremap [B :buf 
+ nnoremap [d :bd 
+ nnoremap [D :bd<CR>
+ nnoremap [C :close<CR>
  
  " editor styling, colorscheme specified after the scheme file is loaded
  syntax on
@@ -81,12 +92,12 @@ source $VIMRUNTIME/menu.vim
  NeoBundle 'fsworld009/obsidian2.vim'
  NeoBundle 'tpope/vim-surround'
 
- NeoBundle 'scrooloose/syntastic'
+ "NeoBundle 'scrooloose/syntastic'
  "let g:syntastic_quiet_messages = { "type": "style","level": "warnings"} 
  let g:syntastic_check_on_open = 1
  let g:syntastic_enable_highlighting=0
  "active mode is broken when NERDTree is opened, workaround
- autocmd BufWritePost *.* SyntasticCheck
+ "autocmd BufWritePost *.* SyntasticCheck
  
  "vim-misc is required for vim-session
  NeoBundle 'xolox/vim-misc'
@@ -127,7 +138,13 @@ source $VIMRUNTIME/menu.vim
  "let g:tagbar_ctags_bin = '~/vim/bin/ctags.exe' "this directory is already in $PATH, so this line is useless
  
  NeoBundle 'bling/vim-airline'
+ let g:airline_theme = 'powerlineish'
+ let g:airline#extensions#branch#enabled=1
  let g:airline#extensions#tabline#enabled = 1
+ set laststatus=2
+ 
+ NeoBundle 'tpope/vim-fugitive'
+ "<CR> on tree object doesn't work under msys2git
  
  source ~/projectview.vim 
 
@@ -140,7 +157,6 @@ source $VIMRUNTIME/menu.vim
  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
  let g:syntastic_html_checkers = ['tidy']
  let g:syntastic_html_tidy_exec = 'tidy5'
- "NeoBundle 'gregsexton/MatchTag'
  NeoBundle 'valloric/MatchTagAlways'
 
  " CSS
