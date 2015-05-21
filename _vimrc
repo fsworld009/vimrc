@@ -144,7 +144,7 @@ source $VIMRUNTIME/menu.vim
  set laststatus=2
  
  NeoBundle 'tpope/vim-fugitive'
- "<CR> on tree object doesn't work under msys2git
+ NeoBundle 'gregsexton/gitv'
  
  source ~/projectview.vim 
 
