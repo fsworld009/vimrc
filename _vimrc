@@ -19,6 +19,10 @@ source $VIMRUNTIME/menu.vim
  let mapleader = ","                    "change leader key to ','
  "set nowrap                               "no auto word wrapping
  
+ " Use bash
+ "set shell="sh.exe --login -i"
+ "set shellcmdflag="--login -i"
+ 
  " abbreviated motion keys for split moving
  nnoremap <C-Left> <C-w><Left>
  nnoremap <C-Right> <C-w><Right>
